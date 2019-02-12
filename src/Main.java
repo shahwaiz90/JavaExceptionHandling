@@ -11,7 +11,9 @@ public class Main {
             if(e.getClass().getCanonicalName().equals("SessionExpireException")){
                 //Handling....!!!!
                 // logout the user and show appropriate message that his session has been expired.
+                //Delete user database
                 System.out.println("SessionExpireException Exception Occurred!: "+e.getMessage());
+                System.out.println("SessionExpireException Exception Cause!: "+e.getCause());
 
             }
              if(e.getMessage()!=null&& e.getMessage().equals("NPE")){
@@ -26,7 +28,7 @@ public class Main {
             //This blocks always executes.
             System.out.println("This code always execute");
         }
-
         System.out.println("Safe code executed!");
+
     }
 }
