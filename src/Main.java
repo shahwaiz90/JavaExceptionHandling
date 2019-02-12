@@ -1,3 +1,4 @@
+import java.io.IOException;
 
 public class Main {
 
@@ -8,7 +9,7 @@ public class Main {
             return;
         }
         catch (SessionExpireException e) {
-            if(e.getClass().getCanonicalName().equals("SessionExpireException")){
+//            if(e.getClass().getCanonicalName().equals("SessionExpireException")){
                 //Handling....!!!!
                 // logout the user and show appropriate message that his session has been expired.
                 //Delete user database
@@ -16,10 +17,13 @@ public class Main {
                 System.out.println("SessionExpireException Exception Cause!: "+e.getCause());
                 //may be send the cause to server for further debugging.
 
-            }
+//            }
         }
         catch (NullPointerException e){
             System.out.println("Null pointer Exception Occurred!: "+e.getMessage());
+        }
+        catch (IOException e){
+            System.out.println("IO Exception Occurred!: "+e.getMessage());
         }
         catch (Exception e){
             System.out.println("Other Exception Occurred!: "+e.getMessage());
